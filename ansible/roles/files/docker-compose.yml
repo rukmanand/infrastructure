@@ -25,6 +25,22 @@ services:
     environment:
       - casCGlobalConfig=/var/jenkins_home/jenkins.yaml
       - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCX0tgXAJbNKbPijARBWuAUlzYqr4YGtprLd6AszThDGsK49Wf0s6uRQQ20KNt2YTETqyqJ4k7W1KXXWGGUMPfmNaBcrhAUQP1XUhzSAu0OZKD4PVLbV+cEonX6ksiWvd1QFO9JerNk+rXnOnQFcCtpEyjawfbSV/Xz4UoyB+RuX/C5CjXNObx4oS7yHCaLZmVGu8IuxGXeuDWdvwVZG+mTxwM5FQNONLIbHCv3X6e1ghDI+4dnlSbxIv+qrUyuGxpUFJ1YNnGGXe/ilpBvJC+F32U9BpYAwCz/SqmszLOM2U2fWPJQ0PMx/ZNo+657uIgcJT0hH5FTaOQLjuf2IyLH carbon@LAPTOP-G30C89O5
+  xamarin-agent:
+    image: xamarin-android-agent
+    privileged: true
+    user: root
+    container_name: xamarin-agent
+    expose:
+      - 22
+    environment:
+      - casCGlobalConfig=/var/jenkins_home/jenkins.yaml
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCX0tgXAJbNKbPijARBWuAUlzYqr4YGtprLd6AszThDGsK49Wf0s6uRQQ20KNt2YTETqyqJ4k7W1KXXWGGUMPfmNaBcrhAUQP1XUhzSAu0OZKD4PVLbV+cEonX6ksiWvd1QFO9JerNk+rXnOnQFcCtpEyjawfbSV/Xz4UoyB+RuX/C5CjXNObx4oS7yHCaLZmVGu8IuxGXeuDWdvwVZG+mTxwM5FQNONLIbHCv3X6e1ghDI+4dnlSbxIv+qrUyuGxpUFJ1YNnGGXe/ilpBvJC+F32U9BpYAwCz/SqmszLOM2U2fWPJQ0PMx/ZNo+657uIgcJT0hH5FTaOQLjuf2IyLH carbon@LAPTOP-G30C89O5
+  nexus:
+    image: sonatype/nexus
+    volumes:
+      - "/opt/nexus-data:/nexus-data"
+    ports:
+      - "8081:8081"
 secrets:
   adminpw:
     file: /opt/jenkins_home/secrets/adminpw
