@@ -1,0 +1,13 @@
+- name: copy required files
+  copy:
+    src: files/{{ item }}
+    dest: /opt/jenkins_home/{{ item }}
+  loop:
+    - docker-compose.yml
+    - jenkins.yml
+
+- name: deploy Docker Compose stack
+  community.docker.docker_compose:
+    project_src: /opt/jenkins_home/
+    files:
+      - docker-compose.yml
