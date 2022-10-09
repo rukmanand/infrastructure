@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+     - 8080:8080
+     - 50000:50000
+    container_name: jenkins
+    volumes:
+      - /opt/jenkins_home:/var/jenkins_home
+      - /opt/jenkins_home/jenkins.yaml:/var/jenkins_home/jenkins.yaml
+      - /var/run/docker.sock:/var/run/docker.sock
+    secrets:
+      - adminpw
+      - agent_private_key
+  agent:
+    image: jenkins/ssh-agent:jdk11
+    privileged: true
+    user: root
+    container_name: agent
+    expose:
+      - 22
+    environment:
+      - casCGlobalConfig=/var/jenkins_home/jenkins.yaml
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCX0tgXAJbNKbPijARBWuAUlzYqr4YGtprLd6AszThDGsK49Wf0s6uRQQ20KNt2YTETqyqJ4k7W1KXXWGGUMPfmNaBcrhAUQP1XUhzSAu0OZKD4PVLbV+cEonX6ksiWvd1QFO9JerNk+rXnOnQFcCtpEyjawfbSV/Xz4UoyB+RuX/C5CjXNObx4oS7yHCaLZmVGu8IuxGXeuDWdvwVZG+mTxwM5FQNONLIbHCv3X6e1ghDI+4dnlSbxIv+qrUyuGxpUFJ1YNnGGXe/ilpBvJC+F32U9BpYAwCz/SqmszLOM2U2fWPJQ0PMx/ZNo+657uIgcJT0hH5FTaOQLjuf2IyLH carbon@LAPTOP-G30C89O5
+secrets:
+  adminpw:
+    file: /opt/jenkins_home/secrets/adminpw
+  agent_private_key:
+    file: ~/.ssh/agent-connector

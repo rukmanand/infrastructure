@@ -1,0 +1,7 @@
+---
+- name: Installation and deployment
+  hosts: "tag_Environment_{{ec2_env}}"
+  become: true
+  roles:
+    - { role: install, when: job_action == 'install'}
+    - { role: deploy,  when: job_action == 'deploy'}

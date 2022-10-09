@@ -1,0 +1,197 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - basicSSHUserPrivateKey:
+          description: "This credentials used for connecting to Jenkins agents"
+          id: "jenkins-agent-auth"
+          privateKeySource:
+            directEntry:
+              privateKey: "{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}"
+          scope: SYSTEM
+          username: "jenkins"
+          usernameSecret: true
+      - basicSSHUserPrivateKey:
+          id: "agent-auth"
+          privateKeySource:
+            directEntry:
+              privateKey: "{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}"
+          scope: GLOBAL
+          username: "jenkins"
+      - usernamePassword:
+          id: "rukmanad"
+          password: "{AQAAABAAAAAQM0+JhA+2Rao34dIn0/rJ+tyMLbeg50kl/ExryYNBn9k=}"
+          scope: GLOBAL
+          username: "rukmanand@outlook.com"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  labelAtoms:
+  - name: "agent1"
+  - name: "built-in"
+  - name: "docker_agent1"
+  - name: "master"
+  labelString: "master"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  nodes:
+  - permanent:
+      labelString: "agent1"
+      launcher:
+        ssh:
+          credentialsId: "agent-auth"
+          host: "agent"
+          port: 22
+          sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+      name: "docker_agent1"
+      remoteFS: "/home/jenkins/agent"
+      retentionStrategy: "always"
+  numExecutors: 1
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "admin"
+        name: "Admin"
+        properties:
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "admin@mail.com"
+        - "apiToken"
+  slaveAgentPort: 50000
+  systemMessage: "Hello Jenkins!!"
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  sSHD:
+    port: -1
+unclassified:
+  audit-trail:
+    logBuildCause: true
+    logCredentialsUsage: true
+    pattern: ".*/(?:configSubmit|doDelete|postBuildResult|enable|disable|cancelQueue|stop|toggleLogKeep|doWipeOutWorkspace|createItem|createView|toggleOffline|cancelQuietDown|quietDown|restart|exit|safeExit)/?.*"
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  email-ext:
+    addAccounts:
+    - address: "rukmanand@outlook.com"
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: true
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: "text/html"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    mailAccount:
+      advProperties: "mail.smtp.starttls.enable=true"
+      credentialsId: "rukmanad"
+      smtpHost: "smtp.office365.com"
+      smtpPort: "587"
+      useTls: true
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://localhost:443/github-webhook/"
+  gitSCM:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  globalDefaultFlowDurabilityLevel:
+    durabilityHint: PERFORMANCE_OPTIMIZED
+  globalNexusConfiguration:
+    instanceId: "a6f3c3b13b5543d5a61865fbef5c9746"
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    - "failOperation"
+    overwriteable: false
+    strategy:
+      absoluteTimeOutStrategy:
+        timeoutMinutes: "60"
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "rukmanand@outlook.com"
+    url: "https://terraform-alb-example-2123446361.ap-south-1.elb.amazonaws.com/"
+  mailer:
+    authentication:
+      password: "{AQAAABAAAAAQqp4Faj6U/VDwbrIMzRpRssoZDKmKCBOt5h6rQGtTmuM=}"
+      username: "rukmanand@outlook.com"
+    charset: "UTF-8"
+    smtpHost: "smtp.office365.com"
+    smtpPort: "587"
+    useSsl: false
+    useTls: true
+  pollSCM:
+    pollingThreadCount: 10
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
