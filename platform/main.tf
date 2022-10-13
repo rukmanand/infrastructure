@@ -16,55 +16,15 @@ module "platform-vpc" {
   }
 }
 
-
-data "aws_subnets" "public" {
-  filter {
-    name = "vpc-id"
-    values = [module.platform-vpc.vpc_id]
-  }
-  filter {
-    name   = "tag:Name"
-    values = ["public-subnets"]
-  }
-}
-
 module "compute" {
   source              = "../modules/computing"
   vpc_azs             = ["ap-south-1a", "ap-south-1b"]
   vpc_id              = module.platform-vpc.vpc_id
-  #subnet_id           = ["10.10.56.0/24", "10.10.64.0/24"]
-  #public_subnets      = data.aws_subnets.public.ids
-  #elb_port            = "443"
-  #server_port         = "8080"
   ec2_count           = 1
   ami_id              = "ami-094466b68260d9a33"
-  instance_type       = "t2.medium"
+  instance_type       = "t2.large"
   public_ip_status    = true
   key_pair_value      = "jenkins"
   lb_tg_id            = module.platform-vpc.alb-tg-id
   lb_tg_id_nexus      = module.platform-vpc.alb-tg-id-nexus
 }
-
-# data "aws_subnets" "public" {
-#   filter {
-#     name = "vpc-id"
-#     values = [module.platform-vpc.vpc_id]
-#   }
-#   filter {
-#     name   = "tag:Name"
-#     values = ["public-subnets"]
-#   }
-# }
-
-# module "compute" {
-#   source              = "../modules/computing"
-#   vpc_id = module.platform-vpc.vpc_id
-#   vpc_public_subnets  = data.aws_subnets.public.ids
-#   elb_port            = "443"
-#   #server_port         = "8080"
-#   #ec2_count           = 1
-#   #ami_id              = "ami-094466b68260d9a33"
-#   #instance_type       = "t2.micro"
-#   #public_ip_status    = true
-#   #key_pair_value      = "jenkins"
-# }
