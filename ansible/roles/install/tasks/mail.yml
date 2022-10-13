@@ -1,0 +1,53 @@
+- name: Cleanup if docker installed
+  apt:
+    name:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+    state: absent
+    update_cache: true
+
+- name: Install apt-transport-https
+  apt:
+    name:
+      - ca-certificates
+      - lsb-release
+      - gnupg
+      - curl
+    state: latest
+    update_cache: true
+
+- name: Creates directory
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+
+- name: Add signing key
+  apt_key:
+    url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
+    state: present
+
+- name: Add repository into sources list
+  ansible.builtin.apt_repository:
+    repo: "deb [arch={{ ansible_architecture }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+
+    state: present
+    filename: docker
+
+- name: Install Docker
+  ansible.builtin.apt:
+    name:
+      - docker
+      - docker.io
+      - docker-compose
+      - docker-registry
+    state: latest
+    update_cache: true
+
+- name: docker status
+  service:
+    name: docker
+    state: started
+    enabled: yes
